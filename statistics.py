@@ -1,10 +1,11 @@
-from statistics import mean
+variable = 0
 
 def calculateStats(numbers,counter):
 
-  if counter == 0:
-    return mean(numbers)
-  elif counter == 1:
+  variable = counter
+  if variable == 0:
+    return sum(numbers) / len(numbers)
+  elif variable == 1:
     return max(numbers)
-  elif counter == 2:
+  elif variable == 2:
     return min(numbers)

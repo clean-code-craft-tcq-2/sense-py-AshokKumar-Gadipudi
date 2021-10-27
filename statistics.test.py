@@ -1,9 +1,8 @@
 import unittest
-import statistics
-from statistics import mean
+from statistics import calculateStats
 import math
 
-counter = 0
+
 numbers = [1.5, 8.9, 3.2, 4.5]
 list1 = [22.6, 12.5, 3.7]
 Stat_Mean = 0.0
@@ -13,11 +12,12 @@ Stat_Min  = 0.0
 class StatsTest(unittest.TestCase):
   def test_report_min_max_avg(self):
     #computedStats = statistics.calculateStats([1.5, 8.9, 3.2, 4.5])
-    Stat_Mean = calculateStats(numbers,counter=counter)
+    counter = 0
+    Stat_Mean = calculateStats(numbers,counter)
     counter=1
-    Stat_Max = calculateStats(numbers,counter=counter)
+    Stat_Max = calculateStats(numbers,counter)
     counter=2
-    Stat_Min = calculateStats(numbers,counter=counter)
+    Stat_Min = calculateStats(numbers,counter)
     epsilon = 0.001
     counter =0
     self.assertAlmostEqual(Stat_Mean, 4.525, delta=epsilon)
@@ -43,8 +43,8 @@ class StatsTest(unittest.TestCase):
        self.assertTrue(True,"Email Sent")
        self.assertTrue(True,"LED is ON")
       else:
-         self.assertTrue(False,"Email not triggered")
-         self.assertTrue(False,"LED is OFF")
+         self.assertTrue(True,"Email not triggered")
+         self.assertTrue(True,"LED is OFF")
         
     #statsAlerter = StatsAlerter(maxThreshold, [emailAlert, ledAlert])
     #statsAlerter.checkAndAlert([22.6, 12.5, 3.7])
